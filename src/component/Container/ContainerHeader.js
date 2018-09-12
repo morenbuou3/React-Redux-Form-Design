@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
-import { addItem, removeItem } from './Action'
-import Form from './Form'
+import {addItem, hide, show} from '../Action/Action'
+import Header from '../Header'
 import {FormControl} from "react-bootstrap";
 import React from "react";
 
@@ -10,10 +10,12 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    removeItem: (id) => dispatch(removeItem(id)),
+    addItem: (text) => dispatch(addItem(text)),
+    showEdit: () => dispatch(hide()),
+    showPreview: () => dispatch(show()),
 })
 
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(Form)
+)(Header)
