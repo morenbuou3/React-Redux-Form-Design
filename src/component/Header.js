@@ -47,10 +47,10 @@ class Header extends React.Component{
                         </Modal.Header>
                         <Modal.Body>
                             <FormGroup>
-                                <Radio name="radioGroup" defaultChecked onClick={this.changeType} value='INPUT'>
+                                <Radio name="radioGroup" defaultChecked={this.state.type === 'INPUT'} onClick={this.changeType} value='INPUT'>
                                     Text Input
                                 </Radio>
-                                <Radio name="radioGroup" onClick={this.changeType} value='DATE'>
+                                <Radio name="radioGroup" defaultChecked={this.state.type === 'DATE'} onClick={this.changeType} value='DATE'>
                                     Date Picker
                                 </Radio>
                             </FormGroup>
